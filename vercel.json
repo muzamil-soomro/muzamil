@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/print",
-      "destination": "https://:BACKEND_URL"
+      "destination": "https://manhattan-everybody-experimental-excellence.trycloudflare.com  "
     }
   ]
 }
