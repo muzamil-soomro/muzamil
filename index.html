@@ -109,13 +109,10 @@
                 else { width++; bar.style.width = width + "%"; bar.innerHTML = width + "%"; }
             }, 40);
 
-            const formData = new FormData(e.target);
-            try {
-                // THE NEW SECURE PERMANENT LINK
-               const backendLink = "https://"+window.location.hostname+"/api/proxy";
-                    method: "POST", 
-                    body: formData 
-                });
+            const response = await fetch('/api/proxy', { 
+    method: "POST", 
+    body: formData 
+});
                 
                 document.getElementById('upload-content').style.display = "none";
                 document.getElementById('success-screen').style.display = "block";
