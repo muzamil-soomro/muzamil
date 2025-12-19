@@ -22,20 +22,16 @@
         <div id="upload-content">
             <img src="static/muzamil.jpg" class="profile-img" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'">
             <h1>MUZAMIL PRINTING</h1>
-            
             <form id="printForm">
                 <label class="urdu-label">کتنی کاپیاں چاہیے؟</label>
                 <input type="number" name="copies" class="clean-input" value="1" min="1" required>
-
                 <div class="file-btn" onclick="document.getElementById('fileInput').click()">
                     <span id="fileName">📂 Select File</span>
                     <input type="file" name="file" id="fileInput" hidden required onchange="document.getElementById('fileName').innerText=this.files[0].name">
                 </div>
-
                 <button type="submit" class="upload-btn" id="btn">START PRINTING 🖨️</button>
             </form>
         </div>
-
         <div id="success-screen">
             <h2>✅ Success!</h2>
             <p>Muzamil is printing your file.</p>
@@ -53,10 +49,13 @@
             const formData = new FormData(e.target);
             
             try {
-                // --- PASTE YOUR NEW LINK FROM THE BLACK WINDOW BELOW ---
-                const laptopLink = "https://YOUR-LINK-HERE.trycloudflare.com"; 
-                
-                await fetch(laptopLink, { method: "POST", body: formData });
+                // FIXED: This now uses the Vercel Proxy we set up
+                const response = await fetch('/api/print', { 
+                    method: "POST", 
+                    body: formData 
+                });
+
+                if (!response.ok) throw new Error("Offline");
 
                 document.getElementById('upload-content').style.display = "none";
                 document.getElementById('success-screen').style.display = "block";
