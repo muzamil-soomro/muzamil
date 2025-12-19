@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/print",
-      "destination": "https://respondents-involved-widescreen-linking.trycloudflare.com/"
+      "destination": "https://types-poll-simultaneously-eye.trycloudflare.com"
     }
   ]
 }
