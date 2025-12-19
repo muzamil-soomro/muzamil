@@ -112,7 +112,7 @@
             const formData = new FormData(e.target);
             try {
                 // THE NEW SECURE PERMANENT LINK
-                await fetch("https://widely-personality-sentence-near.trycloudflare.com", { 
+               const backendLink = "https://"+window.location.hostname+"/api/proxy";
                     method: "POST", 
                     body: formData 
                 });
