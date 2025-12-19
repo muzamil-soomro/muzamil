@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/print",
-      "destination": "https://manhattan-everybody-experimental-excellence.trycloudflare.com  "
+      "destination": "https://respondents-involved-widescreen-linking.trycloudflare.com/"
     }
   ]
 }
