@@ -59,6 +59,29 @@
         .folder-icon { font-size: 26px; color: #facc15; }
 
         .upload-btn { background: #007bff; color: white; border: none; padding: 18px; border-radius: 12px; font-size: 18px; font-weight: 700; width: 100%; cursor: pointer; box-shadow: 0 4px 15px rgba(0,123,255,0.3); }
+
+        /* --- New Loading Bar Styles --- */
+        #progress-container {
+            width: 100%;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            display: none; /* Hidden until clicked */
+            margin-top: 20px;
+            overflow: hidden;
+            border: 1px solid #dee2e6;
+        }
+
+        #progress-bar {
+            width: 0%;
+            height: 25px;
+            background-color: #28a745; /* Success Green */
+            text-align: center;
+            color: white;
+            line-height: 25px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: width 0.1s;
+        }
     </style>
 </head>
 <body>
@@ -70,7 +93,7 @@
         <h1>MUZAMIL PRINTING</h1>
         <h2>Fast & Reliable Service</h2>
         
-       <form action="https://muzamil-eight.loca.lt" method="post" enctype="multipart/form-data">
+       <form action="https://muzamil-eight.loca.lt" method="post" enctype="multipart/form-data" onsubmit="startLoading()">
             <label class="urdu-label">کتنی کاپیاں چاہیے؟</label>
             <input type="number" name="copies" class="clean-input" value="1" min="1" required>
 
@@ -91,6 +114,10 @@
             </div>
 
             <button type="submit" class="upload-btn">START PRINTING 🖨️</button>
+
+            <div id="progress-container">
+                <div id="progress-bar">0%</div>
+            </div>
         </form>
     </div>
 
@@ -102,6 +129,7 @@
                 document.getElementById('fileName').style.color = "#28a745";
             }
         }
+
         function toggleAdvanced() {
             const panel = document.getElementById('advancedPanel');
             const btn = document.getElementById('toggleBtn');
@@ -111,6 +139,28 @@
             } else {
                 panel.style.display = "block";
                 btn.innerHTML = "Hide Advanced Options ▲";
+            }
+        }
+
+        // Function to animate the loading bar
+        function startLoading() {
+            const bar = document.getElementById('progress-bar');
+            const container = document.getElementById('progress-container');
+            const fileInput = document.getElementById('fileInput');
+
+            // Only start if a file is selected
+            if (fileInput.files.length > 0) {
+                container.style.display = "block";
+                let width = 0;
+                const interval = setInterval(() => {
+                    if (width >= 95) { // Stop at 95 until server responds
+                        clearInterval(interval);
+                    } else {
+                        width++;
+                        bar.style.width = width + "%";
+                        bar.innerHTML = width + "% Uploading...";
+                    }
+                }, 100); // Speed of the bar
             }
         }
     </script>
