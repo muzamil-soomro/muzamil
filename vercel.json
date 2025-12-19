@@ -2,8 +2,7 @@
   "rewrites": [
     {
       "source": "/api/print",
-      "destination": "https://note-yamaha-twenty-disabled.trycloudflare.com 
-"
+      "destination": "https://note-yamaha-twenty-disabled.trycloudflare.com"
     }
   ]
 }
