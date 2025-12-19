@@ -2,7 +2,8 @@
   "rewrites": [
     {
       "source": "/api/print",
-      "destination": "https://types-poll-simultaneously-eye.trycloudflare.com"
+      "destination": "https://note-yamaha-twenty-disabled.trycloudflare.com 
+"
     }
   ]
 }
