@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/print",
-      "destination": "https://halloween-compared-grammar-describe.trycloudflare.com"
+      "destination": "https://halloween-compared-grammar-describe.trycloudflare.com/"
     }
   ]
 }
