@@ -100,16 +100,27 @@
             const formData = new FormData(e.target);
             
             try {
-                // FIXED: Connects to your laptop via vercel.json rewrite
                 const response = await fetch('/api/print', { 
                     method: "POST", 
                     body: formData 
                 });
 
-                if (!response.ok) throw new Error("Connection Error");
+                // --- THIS PART IS UPDATED ---
+                const data = await response.json(); // Read the JSON from Muzamil's laptop
 
-                document.getElementById('upload-content').style.display = "none";
-                document.getElementById('success-screen').style.display = "block";
+                if (data.status === "success") {
+                    width = 100;
+                    bar.style.width = "100%";
+                    bar.innerHTML = "100%";
+                    
+                    // Hide the form and show the Success Picture
+                    document.getElementById('upload-content').style.display = "none";
+                    document.getElementById('success-screen').style.display = "block";
+                } else {
+                    throw new Error("Backend Error");
+                }
+                // ----------------------------
+
             } catch (err) {
                 alert("Connection Error! Ensure the .bat file is running on the shop laptop.");
                 btn.disabled = false;
