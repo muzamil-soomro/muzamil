@@ -2,8 +2,7 @@
   "rewrites": [
     {
       "source": "/api/print",
-      "destination": "https://dame-became-beyond-nuke.trycloudflare.com 
-/"
+      "destination": "https://dame-became-beyond-nuke.trycloudflare.com/"
     }
   ]
 }
