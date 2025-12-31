@@ -2,8 +2,7 @@
   "rewrites": [
     {
       "source": "/api/print",
-      "destination": "https://extending-dock-chair-constantly.trycloudflare.com 
-"
+      "destination": "https://extending-dock-chair-constantly.trycloudflare.com"
     }
   ]
 }
