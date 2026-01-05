@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/print",
-      "destination": "https://episodes-vanilla-passed-engineering.trycloudflare.com"
+      "destination": "https://steal-functional-grip-component.trycloudflare.com"
     }
   ]
 }
