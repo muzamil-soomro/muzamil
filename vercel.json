@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/print",
-      "destination": "https://plane-activation-sir-extra.trycloudflare.com"
+      "destination": "https://hollow-incident-precipitation-surround.trycloudflare.com"
     }
   ]
 }
