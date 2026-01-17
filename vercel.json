@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/print",
-      "destination": "https://hollow-incident-precipitation-surround.trycloudflare.com"
+      "destination": "https://aquarium-ellis-illustrated-fashion.trycloudflare.com"
     }
   ]
 }
